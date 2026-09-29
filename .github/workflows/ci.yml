@@ -1,0 +1,25 @@
+# Lightweight checks on every push/PR. RunPod itself builds the Docker image
+# from this repo via its GitHub integration, so no image build happens here.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Byte-compile Python
+        run: python -m py_compile handler.py download_model.py client_example.py
+      - name: Validate test_input.json
+        run: python -c "import json; json.load(open('test_input.json'))"
+      - name: Lint Dockerfile
+        uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: Dockerfile
+          failure-threshold: error

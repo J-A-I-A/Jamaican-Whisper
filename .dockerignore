@@ -1,0 +1,12 @@
+.git
+.github
+__pycache__
+*.pyc
+.venv
+venv
+*.wav
+*.mp3
+*.flac
+*.m4a
+README.md
+client_example.py

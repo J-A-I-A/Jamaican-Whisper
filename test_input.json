@@ -1,0 +1,7 @@
+{
+  "input": {
+    "audio": "https://huggingface.co/datasets/Narsil/asr_dummy/resolve/main/1.flac",
+    "language": "english",
+    "return_timestamps": true
+  }
+}
