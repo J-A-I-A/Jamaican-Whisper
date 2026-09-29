@@ -21,7 +21,7 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 
 # Bake the model weights into the image so cold starts don't hit Hugging Face.
 # Pin a revision with --build-arg MODEL_REVISION=<commit sha> for reproducible builds.
-ARG MODEL_REVISION=main
+ARG MODEL_REVISION=9ed32e0fe885b436006af4dafcdf5ead013301a3
 COPY download_model.py .
 RUN python download_model.py --revision "${MODEL_REVISION}"
 
