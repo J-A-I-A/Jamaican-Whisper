@@ -1,4 +1,4 @@
-# torch is provided by the base image (pytorch/pytorch:2.8.0-cuda12.6-cudnn9-runtime)
+# torch is provided by the base image (pytorch/pytorch:2.8.0-cuda12.8-cudnn9-runtime)
 runpod==1.12.0
 transformers==5.7.0
 huggingface_hub>=1.5.0,<2.0

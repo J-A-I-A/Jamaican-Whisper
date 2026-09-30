@@ -1,6 +1,9 @@
 # RunPod Serverless worker for neddamj/whisper-large-carib
-# CUDA 12.6 runtime -> runs on any RunPod GPU with driver >= 560.
-FROM pytorch/pytorch:2.8.0-cuda12.6-cudnn9-runtime
+# CUDA 12.8 build of PyTorch: the first CUDA line that ships kernels for
+# Blackwell GPUs (RTX 5090 / B200). The cu126 build crashed on those with
+# "no kernel image is available for execution on the device".
+# Needs a host driver >= 570, so the endpoint's allowed CUDA versions must be 12.8+.
+FROM pytorch/pytorch:2.8.0-cuda12.8-cudnn9-runtime
 
 ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONUNBUFFERED=1 \
