@@ -56,7 +56,7 @@ A RunPod Serverless worker for [`neddamj/whisper-large-carib`](https://huggingfa
 - Send either `audio` (an http(s) URL) or `audio_base64`. RunPod caps request payloads at about 10 MB for `/run` and 20 MB for `/runsync`, so use URLs for large files.
 - Set `return_timestamps` to `true` for segment timestamps or `"word"` for word-level timestamps.
 - Set `language` to `null` to auto-detect.
-- Any format ffmpeg can decode works (wav, mp3, m4a, flac, ogg, webm, and so on).
+- Any format ffmpeg can decode works (wav, mp3, m4a, flac, ogg, webm, and so on).....
 
 Response:
 ```json
